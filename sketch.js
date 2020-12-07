@@ -4,15 +4,20 @@ var gameState = "menuScreen";
 var menuIcon, menuImage;
 var contactImage, contactUs;
 var gallery;
-var video;
+var video , videoImage;
 var phoneImage, phoneNumber;
+var phoneNo2, numberImage;
+var galleryImage;
 
 function preload()
 {
  logoImage = loadImage("images/LOGO.jpeg");
  menuImage = loadImage("images/menu bar icon.png");
  contactImage = loadImage("images/contactUs.png");
- phoneImage = loadImage("images/phoneNumber.png");
+ phoneImage = loadImage("images/phoneNo 1.png");
+ numberImage = loadImage("images/phoneNo 2.png");
+ galleryImage = loadImage("images/gallery.png");
+ videoImage = loadImage("images/video.png");
 }
 
 function setup() {
@@ -63,20 +68,25 @@ function mainMenu(){
 	var pos = 130;
 	contactUs = createSprite(width-100, pos );
 	contactUs.addImage("contact", contactImage);
-	contactUs.scale = 0.8;
+	contactUs.scale = 0.5;
 
 	gallery = createSprite(width-100, pos+50 );
-	gallery.addImage("contact", contactImage);
+	gallery.addImage("gallery", galleryImage);
 	gallery.scale = 0.8;
 
     video = createSprite(width-100, pos+100 );
-	video.addImage("contact", contactImage);
+	video.addImage("video", videoImage);
 	video.scale = 0.8;
 }
 
 function displayPhoneNumber(){
 
-	phoneNumber = createSprite(width/2 , height/2);
+	phoneNumber = createSprite(width/2.2 , height/2);
 	phoneNumber.addImage("phone", phoneImage);
+	phoneNumber.scale = 0.5;
+
+	phoneNo2 = createSprite(width/2.2, 380);
+	phoneNo2.addImage("phone",numberImage);
+	phoneNo2.scale = 0.5;
 }
 
