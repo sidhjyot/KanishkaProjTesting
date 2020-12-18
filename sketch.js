@@ -15,6 +15,8 @@ var pic4, pic4Image;
 var pic5, pic5Image;
 var picGroup;
 var nextButton, nextImage;
+var dummy, dummyImage;
+var address, addressImage;
 
 
 function preload()
@@ -32,6 +34,8 @@ function preload()
  pic4Image = loadImage("images/pic4.jpeg");
  pic5Image = loadImage("images/pic5.jpeg");
  nextImage = loadImage("images/download.png");
+ dummyImage = loadImage("images/dummy.jpeg");
+ addressImage = loadImage("images/addres.png");
 }
 
 function setup() {
@@ -116,6 +120,14 @@ function displayPhoneNumber(){
 	phoneNo2 = createSprite(width/2.2, 380);
 	phoneNo2.addImage("phone",numberImage);
 	phoneNo2.scale = 0.5;
+
+	 dummy = createSprite(260, 100, 20, 40);
+	 dummy.addImage("icon", dummyImage);
+	 dummy.scale = 0.2;
+
+	 address = createSprite(width/2.2, 460);
+	 address.addImage("adress", addressImage);
+	 address.scale = 0.6;
 }
 
 function spawnImages(){
