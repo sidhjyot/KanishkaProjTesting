@@ -17,7 +17,7 @@ var picGroup;
 var nextButton, nextImage;
 var dummy, dummyImage;
 var address, addressImage;
-
+var gameState;
 
 function preload()
 {
@@ -27,7 +27,6 @@ function preload()
  phoneImage = loadImage("images/phoneNo 1.png");
  numberImage = loadImage("images/phoneNo 2.png");
  galleryImage = loadImage("images/gallery.png");
- videoImage = loadImage("images/video.png");
  pic1Image = loadImage("images/pic1.jpeg");
  pic2Image = loadImage("images/pic2.jpeg");
  pic3Image = loadImage("images/pic3.jpeg");
@@ -54,8 +53,35 @@ function setup() {
 	menuIcon.addImage("icon", menuImage);
 	menuImage.scale = 0.1;
 
+	gameState = "contactUS";
+	// gameState = "mainMenu"
+
+	nextButton = createSprite(450, height-200, 100, 50);
+	nextButton.addImage("next", nextImage);
+	nextButton.scale = 0.5;
+	nextButton.visible = false;
+
+	phoneNumber = createSprite(width/2.2, 280)
+	phoneNumber.addImage("phone", phoneImage);
+	phoneNumber.scale = 0.5;
+	phoneNumber.visible = false;
+
+	phoneNo2 = createSprite(width/2.2, 380);
+	phoneNo2.addImage("phone",numberImage);
+	phoneNo2.scale = 0.5;
+	phoneNo2.visible = false;
+
+	 dummy = createSprite(260, 100, 20, 40);
+	 dummy.addImage("icon", dummyImage);
+	 dummy.scale = 0.2;
+	 dummy.visible = false;
+
+	 address = createSprite(width/2.2, 460);
+	 address.addImage("adress", addressImage);
+	 address.scale = 0.6;
+	  address.visible = false;
+
 	picGroup = new Group();
-	
 
   
 }
@@ -75,17 +101,33 @@ function draw() {
 	mainMenu();
   }
 
+//   if (gameState === "contactUS"){
+// 		gameState = "contactUS";
+//   }
+
   if(mousePressedOver(contactUs)){
-	  logo.visible = false;
-	  displayPhoneNumber();
+	   logo.visible = false;
+	   displayPhoneNumber();
+	   gameState === "contactUS";
+	   nextButton.visible = false;
+	   phoneNumber.visible = true;
+	   phoneNo2.visible = true;
+	   dummy.visible = true;
+	   address.visible = true;
+
   }
 
   if(mousePressedOver(gallery)){
 	logo.visible = false;
-	nextButton = createSprite(450, height-200, 100, 50);
-	nextButton.addImage("next", nextImage);
-	nextButton.scale = 0.5;
+	nextButton.visible = true;
+	hideContactDetails();
+	phoneNumber.visible = false;
+	phoneNo2.visible = false;
+	dummy.visible = false;
+	address.visible = false;
+
 }
+  
 
 if(mousePressedOver(nextButton)){
 	spawnImages();
@@ -106,28 +148,16 @@ function mainMenu(){
 	gallery.addImage("gallery", galleryImage);
 	gallery.scale = 0.7;
 
-    video = createSprite(width-100, pos+120 );
-	video.addImage("video", videoImage);
-	video.scale = 0.6;
+    // video = createSprite(width-100, pos+120 );
+	// video.addImage("video", videoImage);
+	// video.scale = 0.6;
 }
 
 function displayPhoneNumber(){
+	if(gameState === "contactUS"){
 
-	phoneNumber = createSprite(width/2.2 , height/2);
-	phoneNumber.addImage("phone", phoneImage);
-	phoneNumber.scale = 0.5;
+	}
 
-	phoneNo2 = createSprite(width/2.2, 380);
-	phoneNo2.addImage("phone",numberImage);
-	phoneNo2.scale = 0.5;
-
-	 dummy = createSprite(260, 100, 20, 40);
-	 dummy.addImage("icon", dummyImage);
-	 dummy.scale = 0.2;
-
-	 address = createSprite(width/2.2, 460);
-	 address.addImage("adress", addressImage);
-	 address.scale = 0.6;
 }
 
 function spawnImages(){
@@ -158,4 +188,8 @@ function spawnImages(){
 	 picGroup.add(pic1);
 	 
 	// }
+}
+
+function hideContactDetails(){
+	
 }
