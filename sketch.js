@@ -106,6 +106,8 @@ function draw() {
 //   }
 
   if(mousePressedOver(contactUs)){
+	   console.log(touches.length);
+	   console.log(touches);
 	   logo.visible = false;
 	   displayPhoneNumber();
 	   gameState === "contactUS";
