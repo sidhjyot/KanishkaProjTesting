@@ -96,16 +96,18 @@ function draw() {
 // 	gameState = "menuScreen";
 //   }
 
-  if(mouseIsOver(menuIcon)){
+  if(mouseIsOver(menuIcon) || touches.length > 0){
 	//console.log("hiii ");
 	mainMenu();
+	touches = [];
   }
 
 //   if (gameState === "contactUS"){
 // 		gameState = "contactUS";
 //   }
 
-  if(mousePressedOver(contactUs)){
+  if(mousePressedOver(contactUs) || touches.length > 0){
+	touches = [];
 	   console.log(touches.length);
 	   console.log(touches);
 	   logo.visible = false;
@@ -119,7 +121,8 @@ function draw() {
 
   }
 
-  if(mousePressedOver(gallery)){
+  if(mousePressedOver(gallery) || touches.length > 0){
+	touches = [];
 	logo.visible = false;
 	nextButton.visible = true;
 	hideContactDetails();
@@ -131,7 +134,8 @@ function draw() {
 }
   
 
-if(mousePressedOver(nextButton)){
+if(mousePressedOver(nextButton) || touches.length > 0){
+	touches = [];
 	spawnImages();
 }
 
