@@ -38,7 +38,7 @@ function preload()
 }
 
 function setup() {
-	createCanvas(650, 650);
+	createCanvas(displayWidth-10, displayHeight-10);
 
 
 	//engine = Engine.create();
@@ -49,7 +49,7 @@ function setup() {
 	logo.addImage("logo" ,logoImage);
 	logo.scale = 0.5;
 
-	menuIcon = createSprite(620, 45,10, 10);
+	menuIcon = createSprite(displayWidth-200, 45,10, 10);
 	menuIcon.addImage("icon", menuImage);
 	menuImage.scale = 0.1;
 
@@ -146,11 +146,11 @@ if(mousePressedOver(nextButton) || touches.length > 0){
 function mainMenu(){
 
 	var pos = 130;
-	contactUs = createSprite(width-100, pos );
+	contactUs = createSprite(width-200, pos );
 	contactUs.addImage("contact", contactImage);
 	contactUs.scale = 0.6;
 
-	gallery = createSprite(width-100, pos+60 );
+	gallery = createSprite(width-200, pos+60 );
 	gallery.addImage("gallery", galleryImage);
 	gallery.scale = 0.7;
 
