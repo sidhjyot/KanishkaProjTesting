@@ -38,7 +38,9 @@ function preload()
 }
 
 function setup() {
+
 	createCanvas(displayWidth-10, displayHeight-10);
+
 
 
 	//engine = Engine.create();
