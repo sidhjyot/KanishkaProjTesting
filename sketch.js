@@ -39,7 +39,7 @@ function preload()
 
 function setup() {
 
-	createCanvas(displayWidth-10, displayHeight-10);
+	createCanvas(displayWidth, displayHeight);
 
 
 
@@ -47,11 +47,11 @@ function setup() {
 	//world = engine.world;
 
 	//Create the Bodies Here.
-	logo = createSprite(250, 300, 700, 600);
+	logo = createSprite(displayWidth-50, displayHeight-20);
 	logo.addImage("logo" ,logoImage);
 	logo.scale = 0.5;
 
-	menuIcon = createSprite(displayWidth-200, 45,10, 10);
+	menuIcon = createSprite(displayWidth+100, displayHeight-20);
 	menuIcon.addImage("icon", menuImage);
 	menuImage.scale = 0.1;
 
