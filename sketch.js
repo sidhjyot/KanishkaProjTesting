@@ -47,11 +47,11 @@ function setup() {
 	//world = engine.world;
 
 	//Create the Bodies Here.
-	logo = createSprite(displayWidth-50, displayHeight-20);
+	logo = createSprite(displayWidth-200, displayHeight-50);
 	logo.addImage("logo" ,logoImage);
 	logo.scale = 0.5;
 
-	menuIcon = createSprite(displayWidth+100, displayHeight-20);
+	menuIcon = createSprite(displayWidth-50, displayHeight-20);
 	menuIcon.addImage("icon", menuImage);
 	menuImage.scale = 0.1;
 
