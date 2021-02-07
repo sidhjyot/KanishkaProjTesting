@@ -102,6 +102,7 @@ function draw() {
 	//console.log("hiii ");
 	mainMenu();
 	touches = [];
+	
   }
 
 //   if (gameState === "contactUS"){
@@ -120,7 +121,7 @@ function draw() {
 	   phoneNo2.visible = true;
 	   dummy.visible = true;
 	   address.visible = true;
-
+	   console.log("clicked on contacts " + touches);
   }
 
   if(mousePressedOver(gallery) || touches.length > 0){
@@ -132,7 +133,7 @@ function draw() {
 	phoneNo2.visible = false;
 	dummy.visible = false;
 	address.visible = false;
-
+	console.log("clicked on gallery " + touches);
 }
   
 
