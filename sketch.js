@@ -39,7 +39,7 @@ function preload()
 
 function setup() {
 
-	createCanvas(displayWidth, displayHeight);
+	createCanvas(displayWidth-30, displayHeight-30);
 
 
 
@@ -47,23 +47,23 @@ function setup() {
 	//world = engine.world;
 
 	//Create the Bodies Here.
-	logo = createSprite(displayWidth-200, displayHeight-50);
+	logo = createSprite(250, height/2);
 	logo.addImage("logo" ,logoImage);
 	logo.scale = 0.5;
 
-	menuIcon = createSprite(displayWidth-50, displayHeight-20);
+	menuIcon = createSprite(width-50, 50);
 	menuIcon.addImage("icon", menuImage);
 	menuImage.scale = 0.1;
 
 	gameState = "contactUS";
 	// gameState = "mainMenu"
 
-	nextButton = createSprite(450, height-200, 100, 50);
+	nextButton = createSprite(width-300, height-200, 100, 50);
 	nextButton.addImage("next", nextImage);
 	nextButton.scale = 0.5;
 	nextButton.visible = false;
 
-	phoneNumber = createSprite(width/2.2, 280)
+	phoneNumber = createSprite(width/2-50, 280)
 	phoneNumber.addImage("phone", phoneImage);
 	phoneNumber.scale = 0.5;
 	phoneNumber.visible = false;
